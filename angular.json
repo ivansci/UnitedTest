@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "UnitedTest"
+    }
+  },
+  "defaultProject": "UnitedTest",
+  "cli": {
+    "analytics": "2e1bf5eb-4142-4805-9e38-1aaad4201bbb"
+  }
 }
