@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+// Base Variables
+@import 'src/scss/variables';
+@import 'src/scss/base';
+
+// Components
+@import 'src/app/components/header/header.component';
+
+// Pages
+@import 'src/app/app.component';
+@import 'src/app/pages/home/home.component';
+@import 'src/app/pages/games/games.component';
