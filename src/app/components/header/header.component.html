@@ -1,0 +1,24 @@
+<div class="logo">
+    <a [routerLink]="'/home'">RC</a>
+    <fa-icon [icon]="faCarrot"></fa-icon>
+</div>
+<nav>
+    <div (click)="toggle()">
+        <fa-icon [icon]="faBars"></fa-icon>
+    </div>
+    <div class="desktop-menu">
+        <ng-template [ngTemplateOutlet]="menuTpl" [ngTemplateOutletContext]="{$implicit:menu}"></ng-template>
+    </div>
+    <div class="mobile-menu" [ngClass]="status ? 'visible' : 'hidden'">
+        <ng-template [ngTemplateOutlet]="menuTpl" [ngTemplateOutletContext]="{$implicit:menu}"></ng-template>
+    </div>
+</nav>
+
+
+<ng-template #menuTpl let-menu>
+    <ul class=" mr-auto">
+        <li routerLinkActive="active" *ngFor="let item of menu" class="nav-item">
+            <a [routerLink]="item.link">{{item.name}}</a>
+        </li>
+    </ul>
+</ng-template>

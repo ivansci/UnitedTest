@@ -1,0 +1,92 @@
+app-header {
+  background-color: $secondary-color;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+
+  .hidden {
+    display: none;
+  }
+
+  .visible {
+    background-color: $secondary-color;
+    height: 100%;
+    position: absolute;
+    right: 8px;
+    width: 40%;
+  }
+
+  ul {
+    display: flex;
+
+    li {
+      list-style: none;
+    }
+  }
+
+  .mobile-menu ul {
+    align-items: flex-start;
+    flex-direction: column;
+    font-size: 24px;
+
+    li {
+      padding: 20px 0;
+    }
+  }
+
+  .desktop-menu {
+    display: none;
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  app-header {
+    background-color: $main-color;
+    display: block;
+    padding: 0;
+
+    .logo {
+      font-size: 46px;
+    }
+
+    nav {
+      display: flex;
+      background-color: $secondary-color;
+
+      .desktop-menu {
+        display: flex;
+        flex-basis: 100%;
+
+        ul {
+          margin: auto;
+
+          li {
+            font-size: 24px;
+            padding: 10px 30px;
+            cursor: pointer;
+
+            a {
+              padding: 10px 30px;
+            }
+
+            &:hover:not(.active) {
+              border-bottom: 4px solid $button;
+              font-weight: 700;
+              font-size: 26px;
+              padding: 6px 25px;
+            }
+
+            &.active {
+              background-color: $button;
+            }
+          }
+        }
+      }
+    }
+
+    .fa-bars,
+    .mobile-menu {
+      display: none;
+    }
+  }
+}
