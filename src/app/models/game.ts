@@ -1,6 +1,6 @@
 export class Game {
 
-    categories: Array<string>;
+    categories: Array<any>;
     features: Array<any>;
     themes: Array<any>;
     icons: Array<any>;
@@ -11,29 +11,34 @@ export class Game {
     front_game_id: string;
     name: string;
     title: string;
-    ratio: string;
+    width?: string;
+    height?: string;
+    ratio?: string;
     status: string;
     provider: string;
     show_as_provider: string;
     provider_title: string;
-    game_options: null;
+    game_options?: any;
     blocked_countries: Array<string>;
     has_age_restriction: number;
     icon_2: string;
-    background: string;
+    icon_3?: string;
+    background?: string;
     types: {
         realMode: number;
-        funMode: number;
+        funMode?: number;
+        viewMode?: number;
+        is_target?: number;
     };
     game_skin_id: string;
-    cats: [
-        {
-            id: number,
-            title: string;
-            type: string;
-        }
-    ];
-    feats?: Array<string>;
-    thms?: Array<string>;
+    cats?: Array<ExtraDesc>;
+    feats?: Array<ExtraDesc>;
+    thms?: Array<ExtraDesc>;
     active: string;
+}
+
+interface ExtraDesc {
+    id: string;
+    title: string;
+    type: string;
 }
