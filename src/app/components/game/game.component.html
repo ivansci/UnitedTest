@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="cover">
+        <ng-template *ngIf="index+1; then bonusGames else games"></ng-template>
+    </div>
+    <img src="{{ game.icon_2 || defaultImage }}" alt="">
+</div>
+<div class="title">{{ game.name }}</div>
+
+<ng-template #bonusGames>
+    <div>{{ index + 1 }}</div>
+    <div>Developed by {{ game.provider_title }}</div>
+</ng-template>
+
+<ng-template #games>
+    <a [routerLink]="'/games/' + game.id" class="as-button"><strong>Details</strong></a>
+</ng-template>
+

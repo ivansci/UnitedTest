@@ -1,0 +1,94 @@
+app-games {
+  .filters {
+    h1 {
+      text-align: center;
+    }
+
+    div {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+      justify-content: space-between;
+    }
+  }
+
+  .grid {
+    display: grid;
+    grid-auto-flow: dense;
+    grid-gap: 8px;
+    grid-auto-columns: 1fr 1fr;
+
+    .container {
+      border-radius: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .cover {
+        display: contents;
+      }
+
+      img {
+        border-radius: 10px;
+        height: auto;
+        width: 100%;
+        z-index: -1;
+      }
+
+      a.as-button {
+        display: block;
+        background-color: $button;
+        border-radius: 5px;
+        color: $secondary-color;
+        padding: 10px 15px;
+        position: absolute;
+        text-align: center;
+        margin-top: 100px;
+        width: 100px;
+      }
+    }
+
+    .title {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+@media (min-width: $laptop) {
+  app-games {
+    .filters {
+      align-items: baseline;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .grid {
+      grid-auto-rows: 1fr;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      margin-top: 10px;
+
+      .container {
+        a.as-button {
+          display: none;
+        }
+
+        &:hover {
+          background-color: rgba($secondary-color, 0.7);
+          cursor: pointer;
+          overflow: hidden;
+
+          a.as-button {
+            display: block;
+            background-color: $button;
+            border-radius: 5px;
+            color: $secondary-color;
+            min-width: 60px;
+            padding: 10px 15px;
+            position: absolute;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}

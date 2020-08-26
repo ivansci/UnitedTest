@@ -1,0 +1,12 @@
+<div class="filters">
+    <h1 class="main-title">All Movies</h1>
+    <div>
+        <app-filter [filter]="filter" (category)="selectedGenre($event)"></app-filter>
+        <app-search (outSearch)="selectedWord($event)"></app-search>
+    </div>
+</div>
+<div class="grid">
+    <div *ngFor="let game of (list$ | async)">
+        <app-game [game]="game"></app-game>
+    </div>
+</div>

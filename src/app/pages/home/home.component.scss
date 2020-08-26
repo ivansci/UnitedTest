@@ -1,0 +1,77 @@
+html {
+  background-color: $main-color;
+}
+
+app-home {
+  @keyframes fadeInAnimation {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .main-title {
+    animation: fadeInAnimation infinite 10s;
+    text-shadow: -1px 0 $button, 0 1px $button, 1px 0 $button, 0 -1px $button;
+    text-align: center;
+    font-size: 46px;
+  }
+
+  img {
+    width: 330px;
+    height: 232px;
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .cover {
+      display: none;
+    }
+
+    img {
+      // width: calc(100% - 10px);
+    }
+
+    li {
+      margin-bottom: 15px;
+
+      .title {
+        text-align: center;
+      }
+
+      &:hover {
+        .cover {
+          background-color: rgba($secondary-color, .7);
+          display: flex;
+          flex-direction: column;
+          position: absolute;
+          width: 330px;
+          height: 232px;
+
+          div {
+            text-align: center;
+          }
+
+          div:first-child {
+            color: $button;
+            font-size: 120px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $laptop) {
+  app-home {
+
+    ul {
+      justify-content: space-around;
+    }
+  }
+}
