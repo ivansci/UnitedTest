@@ -8,6 +8,12 @@ import { GameComponent } from './components/game/game.component';
 import { HomeComponent } from './pages/home/home.component';
 import { GamesComponent } from './pages/games/games.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NgxsModule } from '@ngxs/store';
+import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
+import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
+import { GameState } from './store/game.state';
+import { FilterComponent } from './components/filter/filter.component';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   declarations: [
@@ -15,11 +21,16 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     HeaderComponent,
     GameComponent,
     HomeComponent,
-    GamesComponent
+    GamesComponent,
+    FilterComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    NgxsModule.forRoot([GameState]),
+    NgxsReduxDevtoolsPluginModule.forRoot(),
+    NgxsLoggerPluginModule.forRoot(),
     FontAwesomeModule
   ],
   providers: [],

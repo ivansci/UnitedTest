@@ -1,0 +1,4 @@
+<select (change)="selectedType($event.target.value)" >
+    <option [value]="'-1'">Filter By Category</option>
+    <option [value]="category.value" *ngFor="let category of filter">{{ category.type }}</option>
+</select>
